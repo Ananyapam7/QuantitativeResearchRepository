@@ -37,6 +37,7 @@ This is a curated archive documenting my rigorous explorations within quantitati
 
 #### Computer Science:
 - [Operating Systems](./Computer_Science/Operating_Systems.md)
+- [Networking](./Computer_Science/Networking.md)
 - [System Design](./Computer_Science/System_Design.md)
 
 ---
