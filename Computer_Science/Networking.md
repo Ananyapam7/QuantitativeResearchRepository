@@ -486,3 +486,223 @@ The primary function of the Transport Layer is to provide end-to-end communicati
      4. ACK (from the client).
 
 In essence, the Transport Layer acts as the communication manager, ensuring that data flows smoothly between two devices over a network. By handling tasks like segmentation, error correction, flow control, and port addressing, it ensures data is delivered accurately and efficiently.
+
+## IP Address, Subnet mask and Gateway
+
+**1. IP Address:**
+
+An IP address is a unique numeric label assigned to each device connected to a computer network that uses the Internet Protocol for communication. IP addresses serve two primary purposes:
+
+- **Identification:** IP addresses identify a device or host on a network. They are used to distinguish one device from another. In the case of the internet, IP addresses are unique globally.
+
+- **Routing:** IP addresses are used by routers and network devices to route data packets to their intended destination. When you send data over a network, it's routed based on the destination IP address.
+
+There are two main versions of IP addresses:
+
+- **IPv4 (Internet Protocol version 4):** This is the most widely used version of IP addresses and consists of 32 bits written as four decimal numbers separated by periods (e.g., 192.168.0.1).
+
+- **IPv6 (Internet Protocol version 6):** This newer version was introduced to address the shortage of IPv4 addresses. IPv6 addresses are longer, written in hexadecimal notation, and look like this: 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
+
+**2. Subnet Mask:**
+
+A subnet mask is a 32-bit number used in IP networking to define the network portion and the host portion of an IP address. It's used in conjunction with an IP address to determine which part of the address identifies the network and which part identifies the individual host.
+
+A subnet mask consists of consecutive 1s followed by consecutive 0s. The 1s in the subnet mask indicate the network bits, and the 0s indicate the host bits. For example, a common subnet mask for a local network might be 255.255.255.0, which in binary is `11111111.11111111.11111111.00000000`. In this case, the first 24 bits (the 1s) are used to identify the network, and the last 8 bits (the 0s) are used to identify individual hosts within that network.
+
+Subnet masks are crucial for routing and determining which devices are on the same local network. Devices within the same network share the same network portion of the IP address, and they can communicate directly with each other without going through a router.
+
+**3. Gateway:**
+
+A gateway, often referred to as a default gateway, is a device or a network node that connects different networks and acts as an entry or exit point for data traffic between those networks. Gateways are typically routers or firewall devices.
+
+When a device on a local network wants to communicate with a device on a different network (such as the internet), it sends its data to the gateway. The gateway then forwards the data to the appropriate destination network based on routing tables and its own IP address.
+
+In a typical home network, your router serves as the default gateway. It connects your local network to the internet and is responsible for routing data between devices on your local network and devices on the internet.
+
+In summary, IP addresses uniquely identify devices on a network, subnet masks determine the network and host portions of an IP address, and gateways facilitate communication between different networks, such as your local network and the internet. These concepts are fundamental to understanding and configuring computer networks.
+
+## Loopback IP Address
+
+A loopback IP address is a special IP address used to establish network connections within a single device, commonly for testing and troubleshooting purposes. It's designed to allow a device to send network packets to itself without them actually traversing a physical network. In most cases, the loopback address is represented as `127.0.0.1` in IPv4.
+
+Here are a few key points about loopback addresses:
+
+1. **Reserved Address:** The loopback address is reserved by the Internet Assigned Numbers Authority (IANA) and is part of the reserved IP address space. It is not used to identify any physical device on a network but is specifically reserved for internal communication within a device.
+
+2. **Loopback Interface:** On most operating systems, a loopback interface is created that is associated with the loopback address. This interface is often referred to as `lo` or `lo0`. Any network traffic sent to the loopback address is routed internally through this loopback interface.
+
+3. **Common Use Cases:** Loopback addresses are commonly used for various purposes, including:
+
+   - **Testing Network Services:** Developers and network administrators use the loopback address to test network services like web servers, database servers, and email servers on their local machine without affecting external networks.
+
+   - **Troubleshooting:** When diagnosing network issues, the loopback address can be used to check if network protocols and services are functioning correctly on the device itself.
+
+   - **Isolation:** In some cases, network applications may use the loopback address to isolate their communication from external networks, ensuring that data stays within the local device.
+
+   - **Development:** Programmers often use the loopback address to simulate network interactions for software development and testing.
+
+In addition to `127.0.0.1`, IPv6 also defines a loopback address represented as `::1`. It serves the same purpose as the IPv4 loopback address but is used in IPv6 networks.
+
+In summary, the loopback IP address is a reserved address that allows a device to communicate with itself over the network stack. It's a valuable tool for local testing, development, and troubleshooting of network services and applications.
+
+## Network ID and Broadcast ID
+
+**Network ID and Broadcast ID** are two fundamental concepts in IP addressing and subnetting. They play a crucial role in defining the boundaries of a network and determining how IP addresses are distributed within that network. Let's explore these concepts in detail:
+
+**1. Network ID (Network Address):**
+
+- **Purpose:** The Network ID, also known as the Network Address, is used to identify a specific network within an IP address range. It represents the network as a whole and is used for routing and directing traffic within that network.
+
+- **Format:** A Network ID is essentially the network portion of an IP address. It is obtained by applying the subnet mask to an IP address. The subnet mask determines which part of the IP address is the network portion.
+
+- **Example:** Consider an IPv4 address `192.168.1.25` with a subnet mask `255.255.255.0`. Applying the subnet mask, you get the Network ID as `192.168.1.0`. This means that all devices within the `192.168.1.0` network share the same Network ID.
+
+- **Usage:** Routers use the Network ID to determine how to forward data packets within a network. When a device sends data to another device within the same network, the router uses the Network ID to make sure the data stays within that network.
+
+**2. Broadcast ID:**
+
+- **Purpose:** The Broadcast ID is used for broadcasting data packets to all devices within a specific network. When a device sends a broadcast packet, it is received by all devices within the same network.
+
+- **Format:** The Broadcast ID is calculated in a manner similar to the Network ID. It starts with the network portion of an IP address and sets all host bits (those not covered by the subnet mask) to '1.'
+
+- **Example:** Using the same IPv4 address `192.168.1.25` with a subnet mask `255.255.255.0`, the Broadcast ID for the network is `192.168.1.255`. Any broadcast sent to this address will be received by all devices within the `192.168.1.0` network.
+
+- **Usage:** Broadcasts are used for various purposes, such as service discovery or sending data to all devices in a network simultaneously. However, they are less common in modern networking due to efficiency and security concerns.
+
+**Summary:**
+
+- The Network ID identifies the specific network within an IP address range and is used for routing within that network.
+- The Broadcast ID is used to send data to all devices within a network simultaneously.
+- Subnet masks are crucial in determining both the Network ID and Broadcast ID.
+- While Network IDs are still essential for routing, the use of broadcast addresses has become less common in modern networking, with more emphasis on unicast and multicast communication for efficiency and security reasons.
+
+## Classes of IP Addresses
+
+IP addresses are divided into several classes for the purpose of network identification and address assignment. The most commonly used IP address classes are Class A, Class B, and Class C. These classes have different address ranges and are used for different types of networks. Here's an overview of each class:
+
+**1. Class A IP Addresses:**
+
+- **Address Range:** Class A IP addresses use the range from 1.0.0.0 to 126.0.0.0.
+
+- **First Octet:** In a Class A address, the first octet (8 bits) is dedicated to the network portion, and the remaining three octets (24 bits) are for host addresses.
+
+- **Example:** An IP address like 10.0.0.1 is a Class A address. It can accommodate a very large number of hosts (over 16 million) within a single network.
+
+- **Use Cases:** Class A addresses are typically assigned to large organizations or internet service providers (ISPs) that require a vast number of host addresses.
+
+**2. Class B IP Addresses:**
+
+- **Address Range:** Class B IP addresses use the range from 128.0.0.0 to 191.255.0.0.
+
+- **First Two Octets:** In a Class B address, the first two octets (16 bits) are for the network portion, and the remaining two octets (16 bits) are for host addresses.
+
+- **Example:** An IP address like 172.16.0.1 is a Class B address. It can accommodate a moderate number of hosts (around 65,000) within a single network.
+
+- **Use Cases:** Class B addresses are often allocated to medium-sized organizations or educational institutions.
+
+**3. Class C IP Addresses:**
+
+- **Address Range:** Class C IP addresses use the range from 192.0.0.0 to 223.255.255.0.
+
+- **First Three Octets:** In a Class C address, the first three octets (24 bits) are for the network portion, and only the last octet (8 bits) is for host addresses.
+
+- **Example:** An IP address like 192.168.1.1 is a Class C address. It can accommodate a relatively small number of hosts (up to 254) within a single network.
+
+- **Use Cases:** Class C addresses are commonly used for small to medium-sized local area networks (LANs), such as those in homes, small offices, or branch offices.
+
+It's important to note that these traditional IP address classes are less relevant in modern networking, especially with the adoption of Classless Inter-Domain Routing (CIDR), which allows for more flexible and efficient IP address allocation. CIDR allows IP addresses to be allocated in variable-length subnets, making the address space more efficiently utilized.
+
+In CIDR notation, the IP address and subnet mask are written together, like this: `192.168.1.0/24`, where "/24" specifies the subnet mask and the size of the network. This notation is commonly used for IP address allocation and routing in modern networks.
+
+## Switch and Hub
+
+- Switch is a smart device, within a few seconds of turning on, it can learn the MAC addresses of the different devices connected to it.
+
+Many modern network switches (especially enterprise-grade switches) are equipped with Application-Specific Integrated Circuits (ASICs) for packet forwarding and switching. ASICs are specialized hardware components designed for specific tasks, such as high-speed packet processing and forwarding, which are crucial in networking equipment like switches.
+
+Here's why ASICs are commonly used in network switches:
+
+1. **High Performance:** ASICs are purpose-built for specific tasks, such as switching and forwarding packets. This specialization allows them to perform these tasks at extremely high speeds, making them ideal for handling the demands of data traffic in modern networks.
+
+2. **Low Latency:** ASICs have low latency, which is essential for real-time data transmission in networks. They can quickly inspect incoming packets, make forwarding decisions, and send them on their way with minimal delay.
+
+3. **Efficiency:** ASICs are power-efficient and consume less energy compared to general-purpose processors like CPUs. This makes them suitable for high-density switching environments where power consumption is a concern.
+
+4. **Scalability:** ASICs can be designed with various levels of scalability, allowing network switches to handle different traffic loads and port counts effectively.
+
+5. **Customization:** Network equipment manufacturers can customize ASICs to meet specific requirements and optimize packet processing for their switch models.
+
+In summary, ASICs are a common feature in modern network switches because they provide the performance, low latency, and efficiency required to handle the high-speed data traffic in today's networks. These specialized hardware components are instrumental in ensuring that switches can process and forward packets quickly and reliably.
+
+## CAM Table
+
+A CAM table, which stands for "Content Addressable Memory table," is a critical component of network switches. It plays a key role in the process of forwarding Ethernet frames within a local area network (LAN). The CAM table is also sometimes referred to as the MAC address table or forwarding table. Here's an explanation of what it does:
+
+**1. MAC Addresses in Ethernet:**
+
+Ethernet is a widely used networking technology, and every Ethernet network interface card (NIC) or network device has a unique identifier called a Media Access Control (MAC) address. A MAC address is a hardware address that consists of 48 bits and is typically represented as six pairs of hexadecimal digits (e.g., 00:1A:2B:3C:4D:5E).
+
+**2. Function of the CAM Table:**
+
+The CAM table is a data structure within a network switch that associates MAC addresses with the port or interface on which each MAC address is located. Its primary function is to help the switch make forwarding decisions based on MAC addresses.
+
+When an Ethernet frame arrives at a switch, the switch examines the source MAC address in the frame and updates its CAM table with the following information:
+
+- The source MAC address.
+- The port or interface on which the frame arrived.
+
+This information allows the switch to build a database that associates MAC addresses with specific ports. The switch uses the CAM table to make decisions about where to forward frames destined for specific MAC addresses.
+
+**3. Forwarding Decisions:**
+
+When a frame with a destination MAC address arrives at the switch, the switch checks its CAM table to determine which port is associated with that MAC address. Based on this information, the switch forwards the frame only to the port where it believes the destination device is located, rather than broadcasting it to all ports as a hub would do. This process is known as "switching" and is much more efficient than traditional hub-based broadcasting.
+
+**4. Aging and Flooding:**
+
+CAM tables have mechanisms to age out entries that haven't been seen for a while. This helps keep the table up to date and prevent it from becoming too large. If a switch receives a frame with a destination MAC address that isn't found in the CAM table, it may flood the frame out to all ports, as it doesn't have enough information to make a specific forwarding decision.
+
+In summary, a CAM table (MAC address table) is a crucial component of network switches that associates MAC addresses with specific switch ports. It enables switches to efficiently forward Ethernet frames only to the ports where the destination devices are located, making Ethernet networks more efficient and reducing unnecessary network traffic.
+
+Note: Router is the device sitting at the Gateway.
+
+## Address Resolution Protocol
+
+ARP, or Address Resolution Protocol, is a fundamental networking protocol used in Ethernet and IP networks to map between a device's IP address and its corresponding MAC (Media Access Control) address. ARP plays a crucial role in ensuring that data packets are properly delivered within a local area network (LAN). Here's an explanation of how ARP works:
+
+**1. Purpose of ARP:**
+
+ARP is used to resolve a common problem in Ethernet and IP networks. When a device on a network wants to communicate with another device, it needs to know the destination device's MAC address. However, devices typically know each other by their IP addresses, not their MAC addresses. ARP bridges this gap by providing a method to discover the MAC address associated with a known IP address within the same local network.
+
+**2. ARP Request and ARP Reply:**
+
+The ARP process involves two main messages:
+
+- **ARP Request:** When a device on the network needs to find the MAC address corresponding to a specific IP address, it broadcasts an ARP request message to the entire local network. This message includes the sender's IP and MAC address (the device making the request) and the target IP address (the IP address for which it needs the MAC address).
+
+- **ARP Reply:** The device that holds the requested IP address and its associated MAC address responds to the ARP request with an ARP reply message. This reply message includes the sender's IP and MAC address (the device responding) and the target IP address. The requesting device uses this reply to update its ARP cache or table with the MAC address.
+
+**3. ARP Cache:**
+
+Each device on a network maintains an ARP cache (also known as an ARP table) that stores recent ARP resolutions. This cache helps devices avoid the need to send ARP requests for the same IP addresses repeatedly. Instead, they can quickly look up the MAC address in their cache.
+
+**4. ARP Spoofing and Security:**
+
+While ARP serves a critical role in local network communication, it is vulnerable to security issues like ARP spoofing or ARP poisoning. In ARP spoofing attacks, a malicious device sends false ARP replies to redirect traffic meant for one device to another, allowing unauthorized access or interception of data.
+
+To mitigate ARP spoofing attacks, various security measures, such as ARP monitoring and secure ARP protocols, have been developed.
+
+In summary, ARP (Address Resolution Protocol) is a networking protocol used to map between IP addresses and MAC addresses within a local area network (LAN). It enables devices to discover the MAC address associated with a known IP address, facilitating the proper delivery of data packets on the network. ARP is a crucial component of Ethernet and IP communication in LANs.
+
+## Do router's have two MAC addresses
+
+Yes, routers typically have two MAC addresses, one for each of their network interfaces. Routers are networking devices that connect different networks together, and they often have at least two interfaces—one for each network they are connecting.
+
+Here's how routers use MAC addresses:
+
+1. **Local Area Network (LAN) Interface:** Routers have a LAN interface that connects to the local network. This interface has its own MAC address, which is used to identify the router within the LAN. When devices within the LAN need to communicate with the router (e.g., to access the internet), they use the router's LAN MAC address as the destination MAC address in their Ethernet frames.
+
+2. **Wide Area Network (WAN) Interface:** Routers also have a WAN interface, which connects to an external network, typically the internet. This interface has its own MAC address, which is used for communication with devices on the WAN side. When the router communicates with other devices on the internet, it uses its WAN MAC address as the source MAC address in outgoing Ethernet frames.
+
+These two MAC addresses are distinct and associated with their respective interfaces. The router uses these addresses to facilitate communication between devices on the LAN and devices on the WAN. Each interface has its own unique MAC address to ensure that data is correctly routed between the different networks.
+
+In summary, routers have at least two MAC addresses—one for their LAN interface and one for their WAN interface. These addresses play a crucial role in routing data between devices on different networks and are essential for the proper functioning of routers in network communication.
