@@ -61,90 +61,6 @@ A device that modulates digital data from a computer into an analog signal to se
 
 Absolutely! Here's a list of common networking interview questions spanning a range of complexities:
 
-## Basic Networking Questions
-
-1. **What is an IP address and how is it different from a MAC address?**
-2. **Differentiate between a hub, a switch, and a router.**
-3. **What are the differences between IPv4 and IPv6?**
-4. **Explain the OSI model and its layers.**
-5. **What is a subnet? Why is subnetting used in IP networks?**
-
-## Protocols
-
-6. **Explain the difference between TCP and UDP.**
-7. **What is DHCP and why is it used in networks?**
-8. **Describe the purpose of DNS. How does it work?**
-9. **What is ARP, and how does it work?**
-10. **Explain the difference between HTTP and HTTPS.**
-
-## Advanced Networking
-
-11. **What is NAT (Network Address Translation)?**
-12. **How do firewalls protect networks?**
-13. **Describe the three-way handshake in TCP.**
-14. **What is the difference between static and dynamic routing?**
-15. **Explain the concept of VPN (Virtual Private Network). How does it enhance security?**
-
-## Network Troubleshooting
-
-16. **How would you diagnose a network slowdown issue?**
-17. **What is a traceroute/tracert command, and how is it used?**
-18. **Which command/tool would you use to display the routing table of a machine?**
-19. **How would you determine where packet loss is occurring in a network?**
-20. **What are common reasons for DNS failures?**
-
-## Real-World Application
-
-21. **Describe a challenging network problem you faced at a previous job and how you resolved it.**
-22. **How do you prioritize network traffic in a busy network to ensure critical applications have the necessary bandwidth?**
-23. **What measures would you take to secure a wireless network?**
-24. **How do you handle a situation where a key part of the company network goes down during peak hours?**
-25. **How do you stay updated with the latest network technologies and security threats?**
-
----
-
-## Advanced Networking Concepts
-
-1. **Discuss the concept of Quality of Service (QoS) in networking. How can it be implemented?**
-2. **Describe the differences between interior and exterior gateway protocols. Give examples of each.**
-3. **What is Network Function Virtualization (NFV)?**
-4. **Discuss the purpose and function of Border Gateway Protocol (BGP).**
-5. **How does traffic shaping work, and why is it essential?**
-
-## Network Security
-
-6. **Explain the differences between IDS and IPS.**
-7. **How would you secure a network against man-in-the-middle attacks?**
-8. **Describe the SSL/TLS handshake process.**
-9. **What is a DDoS attack, and how would you mitigate it?**
-10. **Discuss the differences and similarities between symmetric and asymmetric encryption.**
-
-## Protocol Deep Dives
-
-11. **Explain the role of Sequence and Acknowledgment numbers in TCP.**
-12. **What is Path MTU Discovery, and why is it important?**
-13. **Discuss the implications and solutions to TCP Starvation/UDP Dominance.**
-14. **Describe the operation of the Spanning Tree Protocol (STP).**
-15. **How do sliding window protocols like TCP ensure data integrity?**
-
-## Network Design and Architecture
-
-16. **How would you design a scalable network for a growing company?**
-17. **Explain the concept of split-horizon DNS.**
-18. **Describe a situation where you'd recommend a mesh topology over a star topology.**
-19. **What considerations should be made when designing a network for a data center versus a corporate office?**
-20. **How would you handle network design for a multinational corporation with locations in countries with strict data sovereignty laws?**
-
-## Deep Troubleshooting
-
-21. **A user is experiencing slow download speeds but fast upload speeds. How would you diagnose and resolve the issue?**
-22. **Explain an instance where modifying TCP parameters (like window size) might be necessary.**
-23. **How would you identify and address a routing loop in a network?**
-24. **What tools or methods would you use to pinpoint packet loss occurring outside of a company's internal network?**
-25. **A critical application's real-time data is arriving out of sequence, causing errors. How would you identify the cause and rectify it?**
-
----
-
 ## Network Interface Controller (NIC)
 
 A **Network Interface Controller (NIC)**, often also referred to as a network card, network adapter, or LAN (Local Area Network) adapter, is a hardware component that connects a computer or other device to a computer network. Its primary function is to serve as the interface between a computer's internal systems and the network, be it local or an external network like the internet.
@@ -706,3 +622,86 @@ Here's how routers use MAC addresses:
 These two MAC addresses are distinct and associated with their respective interfaces. The router uses these addresses to facilitate communication between devices on the LAN and devices on the WAN. Each interface has its own unique MAC address to ensure that data is correctly routed between the different networks.
 
 In summary, routers have at least two MAC addresses—one for their LAN interface and one for their WAN interface. These addresses play a crucial role in routing data between devices on different networks and are essential for the proper functioning of routers in network communication.
+
+---
+## Basic Networking Questions
+
+1. **What is an IP address and how is it different from a MAC address?**
+2. **Differentiate between a hub, a switch, and a router.**
+3. **What are the differences between IPv4 and IPv6?**
+4. **Explain the OSI model and its layers.**
+5. **What is a subnet? Why is subnetting used in IP networks?**
+
+## Protocols
+
+6. **Explain the difference between TCP and UDP.**
+7. **What is DHCP and why is it used in networks?**
+8. **Describe the purpose of DNS. How does it work?**
+9. **What is ARP, and how does it work?**
+10. **Explain the difference between HTTP and HTTPS.**
+
+## Advanced Networking
+
+11. **What is NAT (Network Address Translation)?**
+12. **How do firewalls protect networks?**
+13. **Describe the three-way handshake in TCP.**
+14. **What is the difference between static and dynamic routing?**
+15. **Explain the concept of VPN (Virtual Private Network). How does it enhance security?**
+
+## Network Troubleshooting
+
+16. **How would you diagnose a network slowdown issue?**
+17. **What is a traceroute/tracert command, and how is it used?**
+18. **Which command/tool would you use to display the routing table of a machine?**
+19. **How would you determine where packet loss is occurring in a network?**
+20. **What are common reasons for DNS failures?**
+
+## Real-World Application
+
+21. **Describe a challenging network problem you faced at a previous job and how you resolved it.**
+22. **How do you prioritize network traffic in a busy network to ensure critical applications have the necessary bandwidth?**
+23. **What measures would you take to secure a wireless network?**
+24. **How do you handle a situation where a key part of the company network goes down during peak hours?**
+25. **How do you stay updated with the latest network technologies and security threats?**
+
+---
+
+## Advanced Networking Concepts
+
+1. **Discuss the concept of Quality of Service (QoS) in networking. How can it be implemented?**
+2. **Describe the differences between interior and exterior gateway protocols. Give examples of each.**
+3. **What is Network Function Virtualization (NFV)?**
+4. **Discuss the purpose and function of Border Gateway Protocol (BGP).**
+5. **How does traffic shaping work, and why is it essential?**
+
+## Network Security
+
+6. **Explain the differences between IDS and IPS.**
+7. **How would you secure a network against man-in-the-middle attacks?**
+8. **Describe the SSL/TLS handshake process.**
+9. **What is a DDoS attack, and how would you mitigate it?**
+10. **Discuss the differences and similarities between symmetric and asymmetric encryption.**
+
+## Protocol Deep Dives
+
+11. **Explain the role of Sequence and Acknowledgment numbers in TCP.**
+12. **What is Path MTU Discovery, and why is it important?**
+13. **Discuss the implications and solutions to TCP Starvation/UDP Dominance.**
+14. **Describe the operation of the Spanning Tree Protocol (STP).**
+15. **How do sliding window protocols like TCP ensure data integrity?**
+
+## Network Design and Architecture
+
+16. **How would you design a scalable network for a growing company?**
+17. **Explain the concept of split-horizon DNS.**
+18. **Describe a situation where you'd recommend a mesh topology over a star topology.**
+19. **What considerations should be made when designing a network for a data center versus a corporate office?**
+20. **How would you handle network design for a multinational corporation with locations in countries with strict data sovereignty laws?**
+
+## Deep Troubleshooting
+
+21. **A user is experiencing slow download speeds but fast upload speeds. How would you diagnose and resolve the issue?**
+22. **Explain an instance where modifying TCP parameters (like window size) might be necessary.**
+23. **How would you identify and address a routing loop in a network?**
+24. **What tools or methods would you use to pinpoint packet loss occurring outside of a company's internal network?**
+25. **A critical application's real-time data is arriving out of sequence, causing errors. How would you identify the cause and rectify it?**
