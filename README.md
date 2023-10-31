@@ -42,9 +42,19 @@ This is a curated archive documenting my rigorous explorations within quantitati
 
 ---
 
+#### C++ and Linux:
+- [Basics](https://www.youtube.com/watch?v=bMKzi6aEBbE&list=PL0oekSefhQVJdk0hSRu6sZ2teWM740NtL)
+- OOPS
+- Move Semantics
+- boost
+- Concurrency: async and threading, promise, future
+- Smart pointers
+- rvalue, lvalue
+- lambda expressions
+- std::variant
+- template metaprogramming
+
 #### Programming Languages:
-- **C++**:
-  - [Threading](./Programming_Languages/C++/threading.md)
 - **Python**:
   - [pandas](./Programming_Languages/Python/pandas.md)
 - **R**:

@@ -1,0 +1,7 @@
+- OOPs
+- Threading, Mutex, condition variables, deadlock, producer consumer problem, critical section
+- casting in C++
+- Bitmasking in C++
+- Callbacks, Lambda functions, Move semantics, smart pointers
+- Low Level Design patterns, SOLID principles
+- Boost, Async, future promises, concurrent programming
